@@ -17,6 +17,25 @@
   }
 }
 
+/* Primary nav links, in the pill and in the collapsed menu below lg. */
+.nav-link {
+  @apply px-3 py-2 rounded-full text-sm font-medium text-gray-600 whitespace-nowrap transition-colors;
+  @apply hover:bg-gray-100 hover:text-black;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900;
+}
+
+.mobile-nav-link {
+  @apply block px-4 py-3 rounded-2xl text-base font-medium text-gray-700 transition-colors;
+  @apply hover:bg-gray-100 hover:text-black;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900;
+}
+
+/* Jumping to a section must clear the fixed nav pill, otherwise the heading
+   lands underneath it. */
+[id] {
+  scroll-margin-top: 7rem;
+}
+
 /* The project carousel scrolls horizontally; the bar itself is visual noise. */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

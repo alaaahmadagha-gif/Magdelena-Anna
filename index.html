@@ -103,25 +103,24 @@
         <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
         <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
       </symbol>
-      <symbol id="i-twitter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-      </symbol>
-      <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-      </symbol>
-      <symbol id="i-dribbble" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94" />
-        <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32" />
-        <path d="M8.56 2.75c4.37 6 6 9.42 8 13.23" />
-        <path d="M16.03 21.12c-2.2-6.18-4.12-11.38-9.96-10.42" />
-      </symbol>
       <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
         <rect width="4" height="12" x="2" y="9" />
         <circle cx="4" cy="4" r="2" />
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="7 10 12 15 17 10" />
+        <line x1="12" x2="12" y1="15" y2="3" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" x2="20" y1="6" y2="6" />
+        <line x1="4" x2="20" y1="12" y2="12" />
+        <line x1="4" x2="20" y1="18" y2="18" />
+      </symbol>
+      <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="8" r="6" />
+        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
       </symbol>
     </svg>
 
@@ -133,54 +132,67 @@
 
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <!-- Floating Navigation Pill -->
-      <header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 animate-[fadeIn_1s_ease-out]">
+      <header
+        class="fixed top-6 left-1/2 -translate-x-1/2 z-50 animate-[fadeIn_1s_ease-out] w-[calc(100%-2rem)] max-w-4xl"
+      >
         <nav
-          class="bg-white/80 backdrop-blur-md border border-gray-200 rounded-full px-4 py-2 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] flex items-center gap-6"
+          class="bg-white/80 backdrop-blur-md border border-gray-200 rounded-full pl-2 pr-2 py-2 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] flex items-center gap-1"
           aria-label="Primary"
         >
           <a
             href="#main"
-            class="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-600 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+            class="shrink-0 p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-600 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
             aria-label="Back to top"
           >
             <svg class="w-5 h-5" aria-hidden="true"><use href="#i-home" /></svg>
           </a>
-          <div class="w-px h-4 bg-gray-300"></div>
+
+          <!-- Full link row, from the lg breakpoint up where it comfortably fits -->
+          <div class="hidden lg:flex items-center gap-1 ml-1">
+            <a href="#about" class="nav-link">About me</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#certificates" class="nav-link">Certificates</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact me</a>
+          </div>
+
+          <div class="flex-1"></div>
+
           <a
-            href="https://twitter.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-600 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-            aria-label="Magdelena Anna on X"
+            href="/cv/magdelena-anna-cv.pdf"
+            download
+            id="cv-download"
+            class="shrink-0 inline-flex items-center gap-2 bg-gray-900 text-white text-sm font-medium px-4 sm:px-5 py-2.5 rounded-full hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
           >
-            <svg class="w-5 h-5" aria-hidden="true"><use href="#i-twitter" /></svg>
+            <svg class="w-4 h-4" aria-hidden="true"><use href="#i-download" /></svg>
+            <span class="hidden sm:inline">Download my CV</span>
+            <span class="sm:hidden">CV</span>
           </a>
-          <a
-            href="https://instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-600 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-            aria-label="Magdelena Anna on Instagram"
+
+          <!-- Below lg the links collapse behind this toggle -->
+          <button
+            type="button"
+            id="menu-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+            class="lg:hidden shrink-0 p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
           >
-            <svg class="w-5 h-5" aria-hidden="true"><use href="#i-instagram" /></svg>
-          </a>
-          <a
-            href="https://dribbble.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-600 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-            aria-label="Magdelena Anna on Dribbble"
-          >
-            <svg class="w-5 h-5" aria-hidden="true"><use href="#i-dribbble" /></svg>
-          </a>
-          <div class="hidden sm:block w-px h-4 bg-gray-300"></div>
-          <a
-            href="#contact"
-            class="hidden sm:inline-block bg-gray-900 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gray-800 transition-colors"
-          >
-            Book a Call
-          </a>
+            <svg class="w-5 h-5" aria-hidden="true"><use href="#i-menu" /></svg>
+          </button>
         </nav>
+
+        <div
+          id="mobile-menu"
+          hidden
+          class="lg:hidden mt-2 bg-white/95 backdrop-blur-md border border-gray-200 rounded-3xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.12)] p-2"
+        >
+          <a href="#about" class="mobile-nav-link">About me</a>
+          <a href="#experience" class="mobile-nav-link">Experience</a>
+          <a href="#certificates" class="mobile-nav-link">Certificates</a>
+          <a href="#skills" class="mobile-nav-link">Skills</a>
+          <a href="#contact" class="mobile-nav-link">Contact me</a>
+        </div>
       </header>
 
       <main id="main">
@@ -373,7 +385,7 @@
         </section>
 
         <!-- About -->
-        <section class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center mb-24 reveal-on-scroll">
+        <section id="about" class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center mb-24 reveal-on-scroll">
           <div>
             <h2 class="text-2xl md:text-3xl font-bold mb-6">About</h2>
             <div class="space-y-4 text-gray-600 leading-relaxed text-lg">
@@ -426,7 +438,7 @@
         </section>
 
         <!-- Work experience -->
-        <section class="mb-24 reveal-on-scroll delay-100">
+        <section id="experience" class="mb-24 reveal-on-scroll delay-100">
           <h2 class="text-2xl md:text-3xl font-bold mb-12">Work Experience</h2>
           <div class="max-w-3xl mx-auto">
             <div
@@ -477,6 +489,55 @@
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <!-- Certificates.
+             PLACEHOLDER CONTENT — these are not real qualifications. Replace the
+             three cards below with Magdelena's actual certificates (name, issuing
+             body, year), or delete the section and its nav links entirely. -->
+        <section id="certificates" class="mb-24 reveal-on-scroll">
+          <h2 class="text-2xl md:text-3xl font-bold mb-3">Certificates</h2>
+          <p class="text-gray-500 text-lg mb-10">
+            Qualifications and professional training.
+          </p>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article
+              class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-lg transition-all"
+            >
+              <div
+                class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-5 text-gray-700"
+              >
+                <svg class="w-6 h-6" aria-hidden="true"><use href="#i-award" /></svg>
+              </div>
+              <h3 class="font-semibold text-lg mb-1">Certificate name</h3>
+              <p class="text-gray-500 text-sm">Issuing organisation • Year</p>
+            </article>
+
+            <article
+              class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-lg transition-all"
+            >
+              <div
+                class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-5 text-gray-700"
+              >
+                <svg class="w-6 h-6" aria-hidden="true"><use href="#i-award" /></svg>
+              </div>
+              <h3 class="font-semibold text-lg mb-1">Certificate name</h3>
+              <p class="text-gray-500 text-sm">Issuing organisation • Year</p>
+            </article>
+
+            <article
+              class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-lg transition-all"
+            >
+              <div
+                class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-5 text-gray-700"
+              >
+                <svg class="w-6 h-6" aria-hidden="true"><use href="#i-award" /></svg>
+              </div>
+              <h3 class="font-semibold text-lg mb-1">Certificate name</h3>
+              <p class="text-gray-500 text-sm">Issuing organisation • Year</p>
+            </article>
           </div>
         </section>
 
@@ -555,8 +616,8 @@
         </section>
 
         <!-- Services -->
-        <section class="mb-24 reveal-on-scroll">
-          <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center">How Can I Help?</h2>
+        <section id="skills" class="mb-24 reveal-on-scroll">
+          <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center">Skills</h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div
               class="p-8 rounded-2xl bg-gray-50 border border-gray-100 text-center hover:bg-white hover:shadow-lg transition-all"
@@ -734,24 +795,9 @@
         >
           <p class="text-sm text-gray-400">© 2026 Magdelena Anna. All rights reserved.</p>
           <div class="flex gap-4">
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-gray-400 hover:text-black transition-colors"
-              aria-label="Magdelena Anna on X"
-            >
-              <svg class="w-5 h-5" aria-hidden="true"><use href="#i-twitter" /></svg>
-            </a>
-            <a
-              href="https://instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-gray-400 hover:text-black transition-colors"
-              aria-label="Magdelena Anna on Instagram"
-            >
-              <svg class="w-5 h-5" aria-hidden="true"><use href="#i-instagram" /></svg>
-            </a>
+            <!-- X, Instagram and Dribbble were removed. LinkedIn stays because it
+                 is the professional network for this field — say the word and it
+                 goes too. Point it at the real profile URL. -->
             <a
               href="https://linkedin.com/"
               target="_blank"

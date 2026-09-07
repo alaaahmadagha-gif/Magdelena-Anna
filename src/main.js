@@ -85,5 +85,76 @@ function initContactForm() {
   })
 }
 
+/**
+ * Collapsed nav menu below the lg breakpoint.
+ */
+function initMobileMenu() {
+  const toggle = document.querySelector('#menu-toggle')
+  const menu = document.querySelector('#mobile-menu')
+  if (!toggle || !menu) return
+
+  const setOpen = (open) => {
+    menu.hidden = !open
+    toggle.setAttribute('aria-expanded', String(open))
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu')
+  }
+
+  toggle.addEventListener('click', () => setOpen(menu.hidden))
+
+  // Tapping a link jumps to the section, so the menu has served its purpose.
+  menu.addEventListener('click', (event) => {
+    if (event.target.closest('a')) setOpen(false)
+  })
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !menu.hidden) {
+      setOpen(false)
+      toggle.focus()
+    }
+  })
+
+  document.addEventListener('click', (event) => {
+    if (menu.hidden) return
+    if (!menu.contains(event.target) && !toggle.contains(event.target)) setOpen(false)
+  })
+
+  // Leaving the collapsed layout should not strand an open panel.
+  const wide = window.matchMedia('(min-width: 1024px)')
+  wide.addEventListener('change', (event) => {
+    if (event.matches) setOpen(false)
+  })
+}
+
+/**
+ * The CV is a file the site owner has to supply. If it is not in place, say so
+ * instead of sending the visitor to a 404.
+ */
+function initCvDownload() {
+  const link = document.querySelector('#cv-download')
+  if (!link) return
+
+  link.addEventListener('click', async (event) => {
+    try {
+      const response = await fetch(link.href, { method: 'HEAD' })
+      // A missing path falls back to index.html, which is a 200. Only a real
+      // PDF response means the file is actually there.
+      const type = response.headers.get('content-type') ?? ''
+      if (response.ok && type.includes('pdf')) return
+    } catch {
+      // Network failure — fall through to the same message.
+    }
+
+    event.preventDefault()
+    const label = link.querySelector('span:not(.hidden)') ?? link
+    const original = label.textContent
+    label.textContent = 'CV not uploaded yet'
+    setTimeout(() => {
+      label.textContent = original
+    }, 2600)
+  })
+}
+
 initScrollReveal()
 initContactForm()
+initMobileMenu()
+initCvDownload()
