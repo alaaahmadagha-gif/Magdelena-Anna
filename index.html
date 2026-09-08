@@ -209,9 +209,27 @@
             />
           </div>
 
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3 leading-tight">
-            Hey, I'm Magdelena Anna.
-          </h1>
+          <!-- The gold signature sits behind the name as a watermark. Decorative
+               only, so it is aria-hidden and ignores pointer events. The script is
+               taller than the heading, so it is allowed to spill past this wrapper
+               rather than being clipped to a band of stray strokes; its width is
+               capped in vw units so it can never widen the page. -->
+          <div class="relative isolate">
+            <img
+              src="/images/signature.png"
+              alt=""
+              aria-hidden="true"
+              width="900"
+              height="740"
+              class="signature-mark"
+            />
+
+            <h1
+              class="relative z-10 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3 leading-tight"
+            >
+              Hey, I'm Magdelena Anna.
+            </h1>
+          </div>
 
           <p
             class="text-xs md:text-sm font-semibold uppercase tracking-[0.14em] text-gray-800 max-w-xl mx-auto mb-5 leading-relaxed"

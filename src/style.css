@@ -17,6 +17,36 @@
   }
 }
 
+/* Gold signature watermark behind the hero name.
+   Centred on the heading and scaled to the viewport so it stays in proportion
+   on any screen. Kept faint enough that the name reads cleanly over it. */
+.signature-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  width: min(420px, 88vw);
+  max-width: none;
+  opacity: 0.28;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .signature-mark {
+    width: min(620px, 70vw);
+    opacity: 0.25;
+  }
+}
+
+/* A faint wash disappears on a dark rendering, so lift it there. */
+@media (prefers-color-scheme: dark) {
+  .signature-mark {
+    opacity: 0.22;
+  }
+}
+
 /* Primary nav links, in the pill and in the collapsed menu below lg. */
 .nav-link {
   @apply px-3 py-2 rounded-full text-sm font-medium text-gray-600 whitespace-nowrap transition-colors;
