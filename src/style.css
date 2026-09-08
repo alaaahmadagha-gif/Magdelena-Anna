@@ -26,24 +26,25 @@
   left: 50%;
   translate: -50% -50%;
   z-index: -1;
-  width: min(420px, 88vw);
+  width: min(340px, 82vw);
   max-width: none;
-  opacity: 0.28;
+  opacity: 0.45;
   pointer-events: none;
   user-select: none;
 }
 
 @media (min-width: 768px) {
   .signature-mark {
-    width: min(620px, 70vw);
-    opacity: 0.25;
+    width: min(480px, 58vw);
+    opacity: 0.4;
   }
 }
 
-/* A faint wash disappears on a dark rendering, so lift it there. */
+/* Gold on a dark rendering reads fainter than it does on white, so lift it.
+   This must stay above the light values, not below them. */
 @media (prefers-color-scheme: dark) {
   .signature-mark {
-    opacity: 0.22;
+    opacity: 0.55;
   }
 }
 

@@ -198,23 +198,13 @@
       <main id="main">
         <!-- Hero -->
         <section class="text-center mb-20 reveal-on-scroll pt-32 md:pt-48">
-          <div class="relative w-36 h-36 md:w-44 md:h-44 mx-auto mb-8">
-            <img
-              src="/images/magdelena.jpeg"
-              alt="Portrait of Magdelena Anna"
-              width="480"
-              height="480"
-              fetchpriority="high"
-              class="rounded-full w-full h-full object-cover shadow-lg border-2 border-white ring-1 ring-gray-100"
-            />
-          </div>
-
-          <!-- The gold signature sits behind the name as a watermark. Decorative
-               only, so it is aria-hidden and ignores pointer events. The script is
-               taller than the heading, so it is allowed to spill past this wrapper
-               rather than being clipped to a band of stray strokes; its width is
-               capped in vw units so it can never widen the page. -->
-          <div class="relative isolate">
+          <!-- The gold signature is centred on the portrait and spills well past
+               this wrapper, so the script reads whole rather than as a clipped
+               band. Decorative: aria-hidden, and it ignores pointer events. The
+               `isolate` keeps its negative z-index behind the photo but still
+               above the page background, and its width is capped in vw units so
+               it can never widen the page. -->
+          <div class="relative isolate w-36 h-36 md:w-44 md:h-44 mx-auto mb-8">
             <img
               src="/images/signature.png"
               alt=""
@@ -224,12 +214,19 @@
               class="signature-mark"
             />
 
-            <h1
-              class="relative z-10 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3 leading-tight"
-            >
-              Hey, I'm Magdelena Anna.
-            </h1>
+            <img
+              src="/images/magdelena.jpeg"
+              alt="Portrait of Magdelena Anna"
+              width="480"
+              height="480"
+              fetchpriority="high"
+              class="relative rounded-full w-full h-full object-cover shadow-lg border-2 border-white ring-1 ring-gray-100"
+            />
           </div>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3 leading-tight">
+            Hey, I'm Magdelena Anna.
+          </h1>
 
           <p
             class="text-xs md:text-sm font-semibold uppercase tracking-[0.14em] text-gray-800 max-w-xl mx-auto mb-5 leading-relaxed"
