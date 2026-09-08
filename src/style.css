@@ -17,16 +17,19 @@
   }
 }
 
-/* Gold signature watermark behind the hero name.
-   Centred on the heading and scaled to the viewport so it stays in proportion
-   on any screen. Kept faint enough that the name reads cleanly over it. */
+/* Gold signature watermark behind the hero portrait.
+   Scaled in viewport units so it stays in proportion on any screen, and tilted
+   so it reads as something signed by hand rather than placed. `translate` and
+   `rotate` are separate properties here, so the tilt composes with the centring
+   instead of overwriting it. */
 .signature-mark {
   position: absolute;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
+  rotate: -10deg;
   z-index: -1;
-  width: min(420px, 88vw);
+  width: min(360px, 84vw);
   max-width: none;
   opacity: 0.36;
   pointer-events: none;
@@ -35,7 +38,7 @@
 
 @media (min-width: 768px) {
   .signature-mark {
-    width: min(620px, 70vw);
+    width: min(520px, 62vw);
     opacity: 0.32;
   }
 }
