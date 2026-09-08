@@ -86,6 +86,10 @@ button.cert-thumb {
 /* Certificate lightbox */
 .cert-dialog {
   @apply w-[min(92vw,900px)] max-w-none border-0 bg-transparent p-0;
+  /* A modal <dialog> is centred by the UA's `margin: auto`, which Tailwind's
+     preflight resets to 0 along with every other element — without this the
+     dialog pins to the top-left corner. */
+  margin: auto;
 }
 
 .cert-dialog::backdrop {
@@ -106,9 +110,19 @@ button.cert-thumb {
   @apply px-2 pt-3 pb-1 text-center text-sm text-gray-600;
 }
 
+/* Sits inside the panel by default: hanging it outside leaves only a few pixels
+   to the screen edge on a phone, which is one rounding error from being
+   clipped. It moves outside once there is room for it. */
 .cert-dialog__close {
-  @apply absolute -top-3 -right-3 z-10 grid h-9 w-9 place-items-center rounded-full bg-gray-900 text-white shadow-lg transition-colors hover:bg-black;
-  @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  @apply absolute top-2 right-2 z-10 grid h-9 w-9 place-items-center rounded-full bg-gray-900 text-white shadow-lg transition-colors hover:bg-black;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900;
+}
+
+@media (min-width: 640px) {
+  .cert-dialog__close {
+    @apply -top-3 -right-3;
+    @apply focus-visible:outline-white;
+  }
 }
 
 /* Primary nav links, in the pill and in the collapsed menu below lg. */
