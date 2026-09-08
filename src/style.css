@@ -51,6 +51,66 @@
   }
 }
 
+/* Certificate cards.
+   A certificate is a document, not a photo: object-contain on a white panel
+   shows the whole thing rather than cropping into the middle of it. */
+.cert-thumb {
+  @apply relative block w-full aspect-[4/3] bg-white border-b border-gray-100 p-3 overflow-hidden;
+}
+
+button.cert-thumb {
+  @apply cursor-zoom-in;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-gray-900;
+}
+
+.cert-thumb--empty {
+  @apply flex items-center justify-center bg-gray-100/60;
+}
+
+.cert-zoom {
+  @apply absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-gray-900/85 px-3 py-1.5 text-xs font-medium text-white opacity-0 transition-opacity;
+}
+
+.group:hover .cert-zoom,
+.group:focus-visible .cert-zoom {
+  @apply opacity-100;
+}
+
+/* Touch devices have no hover, so the affordance would never appear. */
+@media (hover: none) {
+  .cert-zoom {
+    @apply opacity-100;
+  }
+}
+
+/* Certificate lightbox */
+.cert-dialog {
+  @apply w-[min(92vw,900px)] max-w-none border-0 bg-transparent p-0;
+}
+
+.cert-dialog::backdrop {
+  background: rgb(0 0 0 / 0.75);
+  backdrop-filter: blur(2px);
+}
+
+.cert-dialog__inner {
+  @apply relative rounded-2xl bg-white p-3 shadow-2xl;
+}
+
+.cert-dialog__img {
+  @apply block w-full rounded-xl object-contain;
+  max-height: 78vh;
+}
+
+.cert-dialog__caption {
+  @apply px-2 pt-3 pb-1 text-center text-sm text-gray-600;
+}
+
+.cert-dialog__close {
+  @apply absolute -top-3 -right-3 z-10 grid h-9 w-9 place-items-center rounded-full bg-gray-900 text-white shadow-lg transition-colors hover:bg-black;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+}
+
 /* Primary nav links, in the pill and in the collapsed menu below lg. */
 .nav-link {
   @apply px-3 py-2 rounded-full text-sm font-medium text-gray-600 whitespace-nowrap transition-colors;

@@ -118,6 +118,14 @@
         <line x1="4" x2="20" y1="12" y2="12" />
         <line x1="4" x2="20" y1="18" y2="18" />
       </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8" />
+        <path d="m21 21-4.3-4.3" />
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+      </symbol>
       <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="8" r="6" />
         <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
@@ -508,50 +516,89 @@
         </section>
 
         <!-- Certificates.
-             PLACEHOLDER CONTENT — these are not real qualifications. Replace the
-             three cards below with Magdelena's actual certificates (name, issuing
-             body, year), or delete the section and its nav links entirely. -->
+        <!-- Certificates. Names come from the CV in public/cv/. A card shows its
+             scan when one exists in public/images/certificates/ and a plain crest
+             when it does not, so adding a scan is a drop-in change. -->
         <section id="certificates" class="mb-24 reveal-on-scroll">
           <h2 class="text-2xl md:text-3xl font-bold mb-3">Certificates</h2>
           <p class="text-gray-500 text-lg mb-10">
-            Qualifications and professional training.
+            Legal research and professional training.
           </p>
 
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <article
-              class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-lg transition-all"
+              class="flex flex-col rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div
-                class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-5 text-gray-700"
+              <button
+                type="button"
+                class="cert-thumb group"
+                data-cert-src="/images/certificates/westlaw-edge.png"
+                data-cert-alt="Fundamentals of Westlaw Edge certificate from Thomson Reuters"
+                aria-label="Enlarge the Fundamentals of Westlaw Edge certificate"
               >
-                <svg class="w-6 h-6" aria-hidden="true"><use href="#i-award" /></svg>
+                <img
+                  src="/images/certificates/westlaw-edge.png"
+                  alt=""
+                  loading="lazy"
+                  class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                />
+                <span class="cert-zoom" aria-hidden="true">
+                  <svg class="w-4 h-4"><use href="#i-search" /></svg>
+                  View
+                </span>
+              </button>
+              <div class="p-6">
+                <h3 class="font-semibold text-lg mb-1 leading-snug">Fundamentals of Westlaw Edge</h3>
+                <p class="text-gray-500 text-sm">Thomson Reuters &bull; 2026</p>
               </div>
-              <h3 class="font-semibold text-lg mb-1">Certificate name</h3>
-              <p class="text-gray-500 text-sm">Issuing organisation • Year</p>
             </article>
 
             <article
-              class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-lg transition-all"
+              class="flex flex-col rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div
-                class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-5 text-gray-700"
-              >
-                <svg class="w-6 h-6" aria-hidden="true"><use href="#i-award" /></svg>
+              <div class="cert-thumb cert-thumb--empty">
+                <svg class="w-10 h-10 text-gray-400" aria-hidden="true"><use href="#i-award" /></svg>
               </div>
-              <h3 class="font-semibold text-lg mb-1">Certificate name</h3>
-              <p class="text-gray-500 text-sm">Issuing organisation • Year</p>
+              <div class="p-6">
+                <h3 class="font-semibold text-lg mb-1 leading-snug">Paralegal Student Mastery of Lexis&reg; &mdash; Introduction to Lexis</h3>
+                <p class="text-gray-500 text-sm">LexisNexis</p>
+              </div>
             </article>
 
             <article
-              class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-lg transition-all"
+              class="flex flex-col rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div
-                class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-5 text-gray-700"
-              >
-                <svg class="w-6 h-6" aria-hidden="true"><use href="#i-award" /></svg>
+              <div class="cert-thumb cert-thumb--empty">
+                <svg class="w-10 h-10 text-gray-400" aria-hidden="true"><use href="#i-award" /></svg>
               </div>
-              <h3 class="font-semibold text-lg mb-1">Certificate name</h3>
-              <p class="text-gray-500 text-sm">Issuing organisation • Year</p>
+              <div class="p-6">
+                <h3 class="font-semibold text-lg mb-1 leading-snug">Paralegal Student Mastery of Lexis&reg; &mdash; Secondary Sources</h3>
+                <p class="text-gray-500 text-sm">LexisNexis</p>
+              </div>
+            </article>
+
+            <article
+              class="flex flex-col rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow"
+            >
+              <div class="cert-thumb cert-thumb--empty">
+                <svg class="w-10 h-10 text-gray-400" aria-hidden="true"><use href="#i-award" /></svg>
+              </div>
+              <div class="p-6">
+                <h3 class="font-semibold text-lg mb-1 leading-snug">Paralegal Student Mastery of Lexis&reg; &mdash; Cite-Checking with Shepard's</h3>
+                <p class="text-gray-500 text-sm">LexisNexis</p>
+              </div>
+            </article>
+
+            <article
+              class="flex flex-col rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow"
+            >
+              <div class="cert-thumb cert-thumb--empty">
+                <svg class="w-10 h-10 text-gray-400" aria-hidden="true"><use href="#i-award" /></svg>
+              </div>
+              <div class="p-6">
+                <h3 class="font-semibold text-lg mb-1 leading-snug">SheCodes Basics</h3>
+                <p class="text-gray-500 text-sm">SheCodes</p>
+              </div>
             </article>
           </div>
         </section>
@@ -826,5 +873,17 @@
         </div>
       </footer>
     </div>
+
+    <!-- Certificate lightbox. A native <dialog> gives the backdrop, focus trap
+         and Escape-to-close for free; main.js fills in the image and caption. -->
+    <dialog id="cert-dialog" class="cert-dialog" aria-labelledby="cert-dialog-title">
+      <div class="cert-dialog__inner">
+        <button type="button" id="cert-dialog-close" class="cert-dialog__close" aria-label="Close">
+          <svg class="w-5 h-5" aria-hidden="true"><use href="#i-x" /></svg>
+        </button>
+        <img id="cert-dialog-img" src="" alt="" class="cert-dialog__img" />
+        <p id="cert-dialog-title" class="cert-dialog__caption"></p>
+      </div>
+    </dialog>
   </body>
 </html>

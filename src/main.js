@@ -154,7 +154,85 @@ function initCvDownload() {
   })
 }
 
+/**
+ * Opens a certificate scan full size in a <dialog>.
+ * The dialog supplies its own backdrop, focus trap and Escape handling; this
+ * only fills in the image, wires the close affordances, and returns focus to
+ * the thumbnail that opened it.
+ */
+function initCertificateLightbox() {
+  const dialog = document.querySelector('#cert-dialog')
+  const image = document.querySelector('#cert-dialog-img')
+  const caption = document.querySelector('#cert-dialog-title')
+  const closeButton = document.querySelector('#cert-dialog-close')
+  const thumbs = document.querySelectorAll('button.cert-thumb')
+
+  if (!dialog || !image || thumbs.length === 0) return
+
+  // Without dialog support, leave the thumbnails as plain links to the file
+  // rather than buttons that do nothing.
+  if (typeof dialog.showModal !== 'function') {
+    thumbs.forEach((thumb) => {
+      const link = document.createElement('a')
+      link.href = thumb.dataset.certSrc
+      link.target = '_blank'
+      link.rel = 'noopener'
+      link.className = thumb.className
+      link.innerHTML = thumb.innerHTML
+      thumb.replaceWith(link)
+    })
+    return
+  }
+
+  let opener = null
+
+  // Every way out runs through here. Relying on the dialog's own `close` event
+  // alone is not enough: it does not fire in every environment, which would
+  // leave the previous scan loaded behind the next one and drop focus.
+  // Re-entrant by design — reopening is guarded, and the rest is idempotent.
+  const closeLightbox = () => {
+    if (dialog.open) dialog.close()
+    image.removeAttribute('src')
+    image.alt = ''
+    caption.textContent = ''
+    const toFocus = opener
+    opener = null
+    toFocus?.focus()
+  }
+
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      opener = thumb
+      image.src = thumb.dataset.certSrc
+      image.alt = thumb.dataset.certAlt ?? ''
+      caption.textContent = thumb.dataset.certAlt ?? ''
+      dialog.showModal()
+    })
+  })
+
+  closeButton.addEventListener('click', closeLightbox)
+
+  // Clicking the backdrop means clicking the dialog itself: anything inside it
+  // stops at .cert-dialog__inner.
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) closeLightbox()
+  })
+
+  // `cancel` is the Escape path, `close` covers a close from anywhere else.
+  dialog.addEventListener('cancel', (event) => {
+    event.preventDefault()
+    closeLightbox()
+  })
+  dialog.addEventListener('close', closeLightbox)
+
+  // Fallback for environments where the dialog does not act on Escape itself.
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && dialog.open) closeLightbox()
+  })
+}
+
 initScrollReveal()
 initContactForm()
 initMobileMenu()
 initCvDownload()
+initCertificateLightbox()
