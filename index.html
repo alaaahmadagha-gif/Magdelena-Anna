@@ -97,6 +97,13 @@
       <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6 9 17l-5-5" />
+      </symbol>
+      <symbol id="i-quote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+        <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+      </symbol>
       <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect width="20" height="16" x="2" y="4" rx="2" />
         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
@@ -227,6 +234,97 @@
             </div>
           </div>
         </section>
+
+        <!-- At-a-glance figures. Every number comes from the CV in public/cv/. -->
+        <section class="mb-20 reveal-on-scroll" aria-label="At a glance">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <div class="text-center px-4 py-6 rounded-2xl bg-gray-50 border border-gray-100">
+              <p class="text-3xl md:text-4xl font-bold tracking-tight mb-1">7+</p>
+              <p class="text-gray-500 text-sm">years of experience</p>
+            </div>
+            <div class="text-center px-4 py-6 rounded-2xl bg-gray-50 border border-gray-100">
+              <p class="text-3xl md:text-4xl font-bold tracking-tight mb-1">4</p>
+              <p class="text-gray-500 text-sm">roles at Mars</p>
+            </div>
+            <div class="text-center px-4 py-6 rounded-2xl bg-gray-50 border border-gray-100">
+              <p class="text-3xl md:text-4xl font-bold tracking-tight mb-1">5</p>
+              <p class="text-gray-500 text-sm">certificates</p>
+            </div>
+            <div class="text-center px-4 py-6 rounded-2xl bg-gray-50 border border-gray-100">
+              <p class="text-3xl md:text-4xl font-bold tracking-tight mb-1">A.A.S.</p>
+              <p class="text-gray-500 text-sm">Paralegal Studies, 2026</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Focus areas. Restores the reference layout's horizontal card rail, but
+             each card describes real work from the CV rather than a stock project. -->
+        <section class="mb-24 reveal-on-scroll delay-100" aria-label="Focus areas">
+          <div
+            class="flex overflow-x-auto no-scrollbar gap-6 pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory"
+          >
+            <article
+              class="snap-center shrink-0 w-[300px] md:w-[460px] bg-gray-50 rounded-3xl p-6 md:p-10 hover:shadow-xl transition-all duration-300 border border-gray-100"
+            >
+              <div
+                class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl mb-6 aspect-[16/10] flex items-center justify-center"
+              >
+                <svg class="w-16 h-16 md:w-20 md:h-20 text-emerald-700" aria-hidden="true">
+                  <use href="#i-shield" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-1">Quality &amp; Compliance</h3>
+              <p class="text-gray-500 text-sm mb-4">Internal audits, CAPA and GMP programs</p>
+              <p class="text-gray-600 leading-relaxed">Three years running conformance verification, quality escalations and investigations across finished goods and raw materials at Mars.</p>
+            </article>
+
+            <article
+              class="snap-center shrink-0 w-[300px] md:w-[460px] bg-gray-50 rounded-3xl p-6 md:p-10 hover:shadow-xl transition-all duration-300 border border-gray-100"
+            >
+              <div
+                class="bg-gradient-to-br from-sky-50 to-indigo-50 rounded-2xl mb-6 aspect-[16/10] flex items-center justify-center"
+              >
+                <svg class="w-16 h-16 md:w-20 md:h-20 text-indigo-700" aria-hidden="true">
+                  <use href="#i-search" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-1">Legal Research</h3>
+              <p class="text-gray-500 text-sm mb-4">Westlaw Edge, Lexis, Shepard's</p>
+              <p class="text-gray-600 leading-relaxed">Certified across four legal research platforms while completing an A.A.S. in Paralegal Studies at Moraine Valley Community College.</p>
+            </article>
+
+            <article
+              class="snap-center shrink-0 w-[300px] md:w-[460px] bg-gray-50 rounded-3xl p-6 md:p-10 hover:shadow-xl transition-all duration-300 border border-gray-100"
+            >
+              <div
+                class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl mb-6 aspect-[16/10] flex items-center justify-center"
+              >
+                <svg class="w-16 h-16 md:w-20 md:h-20 text-orange-700" aria-hidden="true">
+                  <use href="#i-clipboard" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-1">Documentation</h3>
+              <p class="text-gray-500 text-sm mb-4">Sampling, testing and traceability</p>
+              <p class="text-gray-600 leading-relaxed">Catalogued and prepared product samples for external lab testing, and ran documentation for environmental microbiological monitoring.</p>
+            </article>
+
+            <article
+              class="snap-center shrink-0 w-[300px] md:w-[460px] bg-gray-50 rounded-3xl p-6 md:p-10 hover:shadow-xl transition-all duration-300 border border-gray-100"
+            >
+              <div
+                class="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl mb-6 aspect-[16/10] flex items-center justify-center"
+              >
+                <svg class="w-16 h-16 md:w-20 md:h-20 text-rose-700" aria-hidden="true">
+                  <use href="#i-users" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-1">Customer Service</h3>
+              <p class="text-gray-500 text-sm mb-4">Seven years front-line</p>
+              <p class="text-gray-600 leading-relaxed">Supervised a team of 10+ at Circle K, covered Store Manager duties, and resolved customer issues in person and by phone.</p>
+            </article>
+          </div>
+        </section>
+
 
 
         <!-- About. Written from the CV in public/cv/. -->
@@ -496,6 +594,77 @@
         </section>
 
 
+        <!-- Highlights. Restores the reference layout's large feature blocks; the
+             bullets are lifted from the CV's own descriptions of these roles. -->
+        <section class="mb-24 reveal-on-scroll" aria-label="Highlights">
+          <h2 class="text-2xl md:text-3xl font-bold mb-3">What I've Been Up To</h2>
+          <p class="text-gray-500 text-lg mb-10">
+            The work behind the seven years.
+          </p>
+          <div class="grid lg:grid-cols-2 gap-6">
+            <article class="bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-100">
+              <div class="flex items-center gap-2 mb-8" aria-hidden="true">
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+              </div>
+              <h3 class="text-2xl font-bold mb-1">Quality Conformance Coordinator</h3>
+              <p class="text-gray-500 mb-8">Mars &bull; 2019&ndash;2022</p>
+              <ul class="space-y-4 text-gray-600 text-lg leading-relaxed">
+                  <li class="flex gap-3">
+                    <svg class="w-5 h-5 mt-1 shrink-0 text-gray-400" aria-hidden="true">
+                      <use href="#i-check" />
+                    </svg>
+                    <span>Ran internal audit activities alongside CAPA and GMP programs.</span>
+                  </li>
+                  <li class="flex gap-3">
+                    <svg class="w-5 h-5 mt-1 shrink-0 text-gray-400" aria-hidden="true">
+                      <use href="#i-check" />
+                    </svg>
+                    <span>Launched Primps, Nonconformances, S-CAPA and Concessions, and assisted investigations.</span>
+                  </li>
+                  <li class="flex gap-3">
+                    <svg class="w-5 h-5 mt-1 shrink-0 text-gray-400" aria-hidden="true">
+                      <use href="#i-check" />
+                    </svg>
+                    <span>Owned the Master Sanitation Schedule, its tracking and trending, and weekly planning communications.</span>
+                  </li>
+              </ul>
+            </article>
+
+            <article class="bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-100">
+              <div class="flex items-center gap-2 mb-8" aria-hidden="true">
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+              </div>
+              <h3 class="text-2xl font-bold mb-1">Sample Processor</h3>
+              <p class="text-gray-500 mb-8">Mars &bull; 2022&ndash;2024</p>
+              <ul class="space-y-4 text-gray-600 text-lg leading-relaxed">
+                  <li class="flex gap-3">
+                    <svg class="w-5 h-5 mt-1 shrink-0 text-gray-400" aria-hidden="true">
+                      <use href="#i-check" />
+                    </svg>
+                    <span>Acquired, catalogued and managed inventory of product samples.</span>
+                  </li>
+                  <li class="flex gap-3">
+                    <svg class="w-5 h-5 mt-1 shrink-0 text-gray-400" aria-hidden="true">
+                      <use href="#i-check" />
+                    </svg>
+                    <span>Prepared and documented samples for external lab testing, and handled testing inquiries with the lab.</span>
+                  </li>
+                  <li class="flex gap-3">
+                    <svg class="w-5 h-5 mt-1 shrink-0 text-gray-400" aria-hidden="true">
+                      <use href="#i-check" />
+                    </svg>
+                    <span>Ran sampling and documentation for environmental microbiological monitoring.</span>
+                  </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+
         <!-- Services -->
         <!-- Skills. The CV lists Auditing, Legal Research and Legal Writing as top
              skills; the rest come from the disciplines in its headline. -->
@@ -578,6 +747,38 @@
 
 
         <!-- Contact -->
+        <!-- Where the reference design had two invented client testimonials. This
+             is Magdelena's own headline from her CV, quoted as her own words. -->
+        <section class="mb-24 reveal-on-scroll delay-100" aria-label="In her own words">
+          <blockquote
+            class="bg-gray-900 text-white p-10 md:p-14 rounded-3xl relative overflow-hidden"
+          >
+            <svg class="absolute top-8 right-8 w-12 h-12 text-gray-700" aria-hidden="true">
+              <use href="#i-quote" />
+            </svg>
+            <p class="text-xl md:text-2xl leading-relaxed relative z-10 max-w-3xl">
+              Multi-industry professional with 7+ years in administration, compliance, quality
+              and customer service, now a Paralegal Studies student seeking entry-level
+              opportunities.
+            </p>
+            <footer class="flex items-center gap-4 mt-8">
+              <img
+                src="/images/magdelena.jpeg"
+                alt=""
+                width="480"
+                height="480"
+                loading="lazy"
+                class="w-12 h-12 rounded-full object-cover border-2 border-gray-700"
+              />
+              <div>
+                <p class="font-semibold text-base">Magdelena Anna</p>
+                <p class="text-gray-400 text-sm">From her CV</p>
+              </div>
+            </footer>
+          </blockquote>
+        </section>
+
+
         <section id="contact" class="mb-12 reveal-on-scroll scroll-mt-32">
           <h2 class="text-2xl md:text-3xl font-bold mb-2">Get in touch</h2>
           <p class="text-gray-500 mb-6 text-lg">
