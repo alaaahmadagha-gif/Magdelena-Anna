@@ -101,8 +101,11 @@ button.cert-thumb {
   @apply relative rounded-2xl bg-white p-3 shadow-2xl;
 }
 
+/* No corner radius here. A certificate is a bordered document whose frame runs
+   right to the edge of the file, so rounding the image clips that frame at all
+   four corners and reads as a crop. The panel around it carries the rounding. */
 .cert-dialog__img {
-  @apply block w-full rounded-xl object-contain;
+  @apply block w-full object-contain;
   max-height: 78vh;
 }
 
