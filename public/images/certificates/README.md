@@ -8,7 +8,7 @@ Filenames the page currently looks for:
 
 | Certificate | File |
 |---|---|
-| Fundamentals of Westlaw Edge | `westlaw-edge.png` |
+| Fundamentals of Westlaw Edge | `westlaw-edge.jpg` |
 
 To give the other certificates a scan, save the image here and add
 `data-cert-src` / `data-cert-alt` to that card's thumbnail in `index.html`,
