@@ -184,6 +184,28 @@ function initCertificateLightbox() {
     return
   }
 
+  // A card points at a scan that may not have been added yet. Rather than show
+  // a broken-image icon and a button that enlarges nothing, swap the thumbnail
+  // for the same crest panel the scan-less cards use.
+  const degradeToCrest = (thumb) => {
+    const panel = document.createElement('div')
+    panel.className = 'cert-thumb cert-thumb--empty'
+    panel.innerHTML =
+      '<svg class="w-10 h-10 text-gray-400" aria-hidden="true"><use href="#i-award" /></svg>'
+    thumb.replaceWith(panel)
+  }
+
+  thumbs.forEach((thumb) => {
+    const scan = thumb.querySelector('img')
+    if (!scan) return
+
+    scan.addEventListener('error', () => degradeToCrest(thumb))
+
+    // The image may have already failed before this ran, in which case the
+    // error event will not fire again.
+    if (scan.complete && scan.naturalWidth === 0) degradeToCrest(thumb)
+  })
+
   let opener = null
 
   // Every way out runs through here. Relying on the dialog's own `close` event
